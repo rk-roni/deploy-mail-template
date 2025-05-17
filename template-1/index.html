@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy.Finance Update</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        body {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #F0F0F0;
+            border-radius: 2px;
+            border-inline: 12px solid #5762FF;
+            border-block: 8px solid #5762FF;
+        }
+
+        .container {
+            width: 100%;
+            background-color: #F0F0F0;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #5762FF;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 28px;
+            background-color: #5762FF;
+        }
+
+        .logo-text {
+            color: #1B1B1B;
+            font-size: 24px;
+            font-weight: 500;
+            font-family: 'Radix', Arial, sans-serif;
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        .intro {
+            padding: 20px 10px;
+            text-align: justify;
+            font-size: 10px;
+            color: #000000;
+            line-height: 1.5;
+        }
+
+
+        .feature-section {
+            padding-inline: 20px;
+            margin: 0 20px 20px;
+            background-color: #E3E3E3;
+            display: flex;
+            align-items: center;
+            /* gap: 20px; */
+            border-radius: 8px;
+            min-height: 200px;
+        }
+
+        .feature-content {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 15px;
+            font-family: 'Radix', Arial, sans-serif;
+            line-height: 1.2;
+        }
+
+        .feature-desc {
+            font-size: 12px;
+            color: #000000;
+            line-height: 1.5;
+        }
+
+        .feature-image {
+            flex: 1;
+            min-width: 200px;
+            max-width: 200px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .security-image {
+            background-color: rgba(70, 77, 240, 0.4);
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 180px;
+        }
+
+        .security-image-inner {
+            background-color: rgba(70, 77, 240, 0.2);
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .feature-section {
+                flex-direction: column;
+                padding: 15px;
+                margin: 0 15px 15px;
+            }
+
+            .feature-content,
+            .feature-image {
+                min-width: 100%;
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .feature-title {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .feature-desc {
+                text-align: center;
+            }
+
+            .security-image {
+                max-width: 100%;
+            }
+        }
+
+        /* Add this new style for SVG placeholders */
+        .feature-image svg {
+            width: 100%;
+            height: auto;
+            max-height: 180px;
+            /* Consistent maximum height */
+            border-radius: 6px;
+        }
+
+        .cta-button {
+            display: block;
+            width: 192px;
+            margin: 20px auto;
+            /* padding: 10px;
+            background-color: #5762FF; */
+            color: #FFFFFF;
+            text-align: center;
+            text-decoration: none;
+            overflow: hidden;
+            font-size: 10px;
+        }
+
+        .footer-content {
+            padding: 10px;
+            text-align: justify;
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .signature {
+            padding: 10px;
+            text-align: left;
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #121214;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            width: 75px;
+            height: 18px;
+        }
+
+        .footer-logo-icon {
+            width: 16px;
+            height: 20px;
+            background-color: #5762FF;
+        }
+
+        .footer-logo-text {
+            color: #F0F0F0;
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Radix', Arial, sans-serif;
+        }
+
+        .footer-links {
+            display: flex;
+            /* gap: 16px; */
+        }
+
+        .footer-link {
+            color: #FFFFFF;
+            font-size: 10px;
+            text-decoration: none;
+        }
+
+        .footer-icons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .footer-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .unsubscribe {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #9C9C9C;
+            font-size: 10px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .feature-section {
+                flex-direction: column;
+            }
+
+            .feature-content,
+            .feature-image {
+                width: 100%;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://assets.pandaterminal.com/deploy/deploy-logo.svg" alt="deploy-logo" />
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                Hello [User's Name],<br><br>
+                ✨ Deploy.Finance is Now Better, Simpler, and Mobile! ✨<br><br>
+                Here's what's new for you:<br><br>
+                You asked, we listened. Deploy.Finance is also available as a Progressive Web App (PWA)—use it instantly
+                on your phone, wherever you are. No downloads, no hassle. Just powerful finance tools right at your
+                fingertips.
+            </div>
+
+            <div class="feature-section">
+                <div class="feature-image">
+                    <img src="https://assets.pandaterminal.com/deploy/deploy-pwa-2.svg" alt="deploy-pwa" />
+                </div>
+                <div class="feature-content">
+                    <h2 class="feature-title">Introducing Deploy PWA</h2>
+                    <p class="feature-desc">We've upgraded Deploy to make your experience seamless, secure, and
+                        mobile-friendly.</p>
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <div class="feature-content">
+                    <h2 class="feature-title">Enhanced<br>Security</h2>
+                    <p class="feature-desc">Your safety matters. We've added Two-Factor Authentication (2FA) to ensure
+                        your funds are even more secure.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="https://assets.pandaterminal.com/deploy/deploy-mfa.svg" alt="deploy-2fa" />
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <div class="feature-image">
+                    <img src="https://assets.pandaterminal.com/deploy/deploy-portfolio-2.svg" alt="deploy-portfolio" />
+                </div>
+                <div class="feature-content">
+                    <h2 class="feature-title">New Portfolio Overview</h2>
+                    <p class="feature-desc">Track your funds and earnings effortlessly with the upgraded portfolio view,
+                        especially when using our popular Income: Funding Rates agent(formerly Delta Neutral / DD NOS
+                        agent).</p>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                Now, if you allocated to agents on Ethereum, Solana, or Base, you can still view those agents by logging
+                into the app and clicking on "Deploy v1" in the bottom left. You can also export your wallet keys for
+                additional security if you prefer.<br><br>
+                These are some of the changes you'll encounter as you explore the app. There's also a Docs section for
+                anybody wanting to learn more about Deploy.Finance, its security, and even the vision.<br><br>
+                Go ahead and give it a try and let us know what you think! Thank you all for being a part of this
+                journey, much more to come.
+            </div>
+
+            <a href="#" class="cta-button">
+                <img alt="upgrade" src="https://assets.pandaterminal.com/deploy/upgrade-btn.svg" />
+            </a>
+
+            <div class="signature">
+                Ben Lilly<br><br>
+                From The Deploy.Finance Team
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://assets.pandaterminal.com/deploy/deploy-logo.svg" alt="deploy-logo" />
+                </div>
+
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Explore more in Docs</a>
+                    <!-- <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Privacy</a> -->
+                </div>
+
+                <div class="footer-icons">
+                    <div class="footer-icon">
+                        <a title="mail" href="#">
+                            <img src="https://assets.pandaterminal.com/deploy/mail-icon.svg" alt="mail-icon" />
+                        </a>
+                    </div>
+                    <div class="footer-icon">
+                        <a title="twitter" href="#">
+                            <img src="https://assets.pandaterminal.com/deploy/twitter-icon.svg" alt="twitter-icon" />
+                        </a>
+                    </div>
+                    <div class="footer-icon">
+                        <a title="telegram" href="#">
+                            <img src="https://assets.pandaterminal.com/deploy/telegram-icon.svg" alt="telegram-icon" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <a class="unsubscribe" href="#" title="Unsubscribe">Unsubscribe from email list.</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
