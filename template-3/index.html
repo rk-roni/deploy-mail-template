@@ -41,7 +41,7 @@
     }
 
     /* Responsive styles */
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
       .container {
         width: 100% !important;
         max-width: 100% !important;
@@ -87,6 +87,13 @@
         font-size: 14px !important;
       }
 
+      .footer-stack,
+      .footer-stack tbody,
+      .footer-stack tr {
+        display: block !important;
+        width: 100% !important;
+      }
+
       .footer-stack td {
         display: block !important;
         width: 100% !important;
@@ -95,7 +102,21 @@
       }
 
       .footer-logo {
-        margin: 0 auto 16px auto !important;
+        text-align: center !important;
+      }
+
+      .footer-logo a {
+        display: inline-block !important;
+      }
+
+      .footer-logo img {
+        margin: 0 auto !important;
+        display: inline-block !important;
+      }
+
+      .footer-icons a {
+        margin-left: 8px !important;
+        margin-right: 8px !important;
       }
 
       .footer-links {
@@ -384,10 +405,10 @@
                 <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 24px;"
                   class="footer-stack" role="presentation">
                   <tr>
-                    <td width="33%" align="left" valign="middle" class="footer-logo">
-                      <a href="https://deploy.finance/?utm_source=email&utm_medium=evolution&utm_campaign=rebrand" target="_blank">
-                        <img src="https://assets.pandaterminal.com/deploy/template-1/deploy-logo.png" alt="Deploy" width="90"
-                          style="border: 0; outline: none; text-decoration: none; display: block;" />
+                    <td width="33%" align="left" valign="middle" class="footer-logo" style="text-align: left;">
+                      <a href="https://deploy.finance/?utm_source=email&utm_medium=evolution&utm_campaign=rebrand" target="_blank" style="display: inline-block;">
+                        <img src="https://assets.pandaterminal.com/deploy/template-1/deploy-logo.png" alt="Deploy" width="90" class="footer-logo-img"
+                          style="border: 0; outline: none; text-decoration: none; display: inline-block;" />
                       </a>
                     </td>
                     <td width="34%" align="center" valign="middle" class="footer-links"
